@@ -7,3 +7,21 @@ td, th {
     border: 1px solid black;
     padding: 5px 10px;
 }
+
+
+/*Navbar Logo*/
+.navbar-brand {
+	margin: 0 auto;
+}
+
+/*JumboTron Picture*/
+.jumbotron {
+	background-image: url("https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1169&q=80");
+	height: 600px;
+	/*background-position-y: center;*/
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
