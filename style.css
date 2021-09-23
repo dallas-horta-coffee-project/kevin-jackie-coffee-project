@@ -55,6 +55,12 @@ h1 {
 }
 .search-section {
 	background-color: #B85C38;
+	font-family: 'Roboto Slab', serif;
+}
+
+.search-navigator {
+font-weight: bold;
+	font-size: 20px;
 }
 
 table {
