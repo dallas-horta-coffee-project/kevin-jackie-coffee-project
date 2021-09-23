@@ -1,15 +1,15 @@
 "use strict"
-
+// Puts coffee data into table from JavaScript
 function renderCoffee(coffee) {
     var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
+    // html += '<td>' + coffee.id + '</td>';
     html += '<td>' + coffee.name + '</td>';
     html += '<td>' + coffee.roast + '</td>';
     html += '</tr>';
 
     return html;
 }
-
+// Converts table data into strings
 function renderCoffees(coffees) {
     var html = '';
     for(var i = coffees.length - 1; i >= 0; i--) {
@@ -25,11 +25,13 @@ function updateCoffees(e) {
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
+        } else if (roastSelection.value === 'all') {
+			filteredCoffees.push(coffee);
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
-
+// Coffe Table Content //
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -47,19 +49,28 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
-// var allRoast = document.querySelector('#all');
-// allRoast = renderCoffees(coffees);
-var tbody = document.querySelector('#coffees');
+
+//Live Search Function
+function liveSearchCoffees(input) {
+	// making sure all inputs are lowercase
+	var searchCoffees = searchArea.value.toLowerCase();
+	var searchedCoffees = [];
+	console.log(searchedCoffees);
+	
+}
+
+var searchArea = document.querySelector('#search-area');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
-// Remove borders
+// exports data to the table in html
+var tbody = document.querySelector('#coffees');
 tbody.innerHTML = renderCoffees(coffees);
 
 // Default submit button action (line 60)
-// submitButton.addEventListener('click', updateCoffees);
+submitButton.addEventListener('click', updateCoffees);
 
 // Used preventDefault to stop the normal action of the submit button
-submitButton.addEventListener('click', function (e) {
-	e.preventDefault(updateCoffees);
-});
+// submitButton.addEventListener('click', function (e) {
+// 	e.preventDefault(updateCoffees);
+// });
