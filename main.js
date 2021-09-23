@@ -1,11 +1,20 @@
 "use strict"
 // Puts coffee data into table from JavaScript
 function renderCoffee(coffee) {
+<<<<<<< HEAD
+    var html = '<div class="row">';
+    // html += '<td>' + coffee.id + '</td>';
+    html += '<span class="coffee-name p-3">' + '<strong>' + coffee.name + '</strong>' + '</span>';
+    html += '<span class="coffee-roast p-3">' +  '<p>' + coffee.roast + '</p>' + '</span>';
+    html += '</div>';
+
+=======
     var html = '<div class="coffee col-6">';
     // html += '<td>' + coffee.id + '</td>';
     html += '<h4 id="coffeepot">' + '<span class="p-2">' + coffee.name + "</span>" + '</h4>';
     html += '<p>' + '<span class="p-2">' + coffee.roast + "</span>" + '</p>';
     html += '</div>'
+>>>>>>> 1ad3a978e8a4bacbb024a98993cb8bb762a2fa48
     return html;
 }
 // Converts table data into strings
@@ -68,16 +77,43 @@ function liveSearchCoffees() {
 var searchArea = document.querySelector('#search-area');
 searchArea.addEventListener('keyup', liveSearchCoffees);
 var submitButton = document.querySelector('#submit');
+
+//Roast Selection Function to update without clicking submit
+function updateRoastSelection() {
+	// e.preventDefault();
+	var selectedRoast = roastSelection.value;
+	console.log(selectedRoast);
+	var roastSelect = [];
+	coffees.forEach((coffee) => {
+		if (coffee.roast === selectedRoast) {
+			roastSelect.push(coffee);
+			// console.log(selectedRoast)
+		}
+		
+	})
+	tbody.innerHTML = renderCoffees(roastSelect);
+}
+// var roastOptions = document.getSelection()
 var roastSelection = document.querySelector('#roast-selection');
+roastSelection.addEventListener("change", updateRoastSelection);
+
+
+
+
+
+
 
 // exports data to the table in html
 var tbody = document.querySelector('#coffees');
 tbody.innerHTML = renderCoffees(coffees);
 
 // Default submit button action (line 60)
-submitButton.addEventListener('click', updateCoffees);
+// submitButton.addEventListener('click', updateCoffees);
 
 // Used preventDefault to stop the normal action of the submit button
-// submitButton.addEventListener('click', function (e) {
-// 	e.preventDefault(updateCoffees);
-// });
+submitButton.addEventListener('click', function (e) {
+	e.preventDefault(updateCoffees);
+});
+
+// var coffeeNameStyle = document.getElementsByClassName('coffee-name');
+// coffeeNameStyle.style.fontWeight = 'bold';
