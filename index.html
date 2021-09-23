@@ -61,9 +61,9 @@
             <table>
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>NAME</th>
-                    <th>ROAST</th>
+<!--                    <th>ID</th>-->
+<!--                    <th>NAME</th>-->
+<!--                    <th>ROAST</th>-->
                 </tr>
                 </thead>
                 <tbody id="coffees"></tbody>
@@ -72,15 +72,17 @@
 
         <div class="column col-lg-6">
             <form>
-<!--	            <input type="text" class="form-control form-control-lg">-->
-	            
+	            <label for="search-area">Name</label>
+	            <input type="text" class="form-control form-control-lg" id="search-area">
+	            <br>
                 <label for="roast-selection">Roast</label>
                 <select class="form-control form-control-lg" id="roast-selection">
-	                <option id="all">all</option>
+	                <option>all</option>
                     <option>light</option>
                     <option>medium</option>
                     <option>dark</option>
                 </select>
+	            <br>
 	            <input class="btn btn-primary btn-lg btn-block" id="submit" type="submit">
             </form>
 	        <form action="">
