@@ -51,15 +51,23 @@ var coffees = [
 ];
 
 //Live Search Function
-function liveSearchCoffees(input) {
+function liveSearchCoffees() {
 	// making sure all inputs are lowercase
 	var searchCoffees = searchArea.value.toLowerCase();
+	console.log(searchCoffees)
 	var searchedCoffees = [];
-	console.log(searchedCoffees);
-	
+	// console.log(searchedCoffees);
+	coffees.forEach((coffee) => {
+		if (coffee.name.toLowerCase().includes(searchCoffees)) {
+			searchedCoffees.push(coffee);
+		}
+	})
+	// console.log(searchedCoffees);
+	tbody.innerHTML = renderCoffees(searchedCoffees);
 }
-
+//Live Search Function working
 var searchArea = document.querySelector('#search-area');
+searchArea.addEventListener('keyup', liveSearchCoffees);
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
