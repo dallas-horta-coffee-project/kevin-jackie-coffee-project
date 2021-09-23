@@ -1,20 +1,17 @@
 "use strict"
 // Puts coffee data into table from JavaScript
 function renderCoffee(coffee) {
-<<<<<<< HEAD
     var html = '<div class="row">';
     // html += '<td>' + coffee.id + '</td>';
     html += '<span class="coffee-name p-3">' + '<strong>' + coffee.name + '</strong>' + '</span>';
     html += '<span class="coffee-roast p-3">' +  '<p>' + coffee.roast + '</p>' + '</span>';
     html += '</div>';
 
-=======
     var html = '<div class="coffee col-6">';
     // html += '<td>' + coffee.id + '</td>';
     html += '<h4 id="coffeepot">' + '<span class="p-2">' + coffee.name + "</span>" + '</h4>';
     html += '<p>' + '<span class="p-2">' + coffee.roast + "</span>" + '</p>';
     html += '</div>'
->>>>>>> 1ad3a978e8a4bacbb024a98993cb8bb762a2fa48
     return html;
 }
 // Converts table data into strings
@@ -88,7 +85,9 @@ function updateRoastSelection() {
 		if (coffee.roast === selectedRoast) {
 			roastSelect.push(coffee);
 			// console.log(selectedRoast)
-		}
+		} else if (roastSelection.value === 'all'){
+		    roastSelect.push(coffee);
+        }
 		
 	})
 	tbody.innerHTML = renderCoffees(roastSelect);
