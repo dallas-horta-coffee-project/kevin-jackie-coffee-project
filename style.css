@@ -72,3 +72,15 @@ td {
 	border: none;
 }
 
+<<<<<<< HEAD
+=======
+#coffees {
+	/*display: flex;*/
+	/*flex-wrap: wrap;*/
+	/*justify-content: space-around;*/
+}
+
+#coffeepot {
+	font-size: xx-large;
+}
+>>>>>>> 1ad3a978e8a4bacbb024a98993cb8bb762a2fa48
