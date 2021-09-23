@@ -71,3 +71,13 @@ table {
 td {
 	border: none;
 }
+
+#coffees {
+	/*display: flex;*/
+	/*flex-wrap: wrap;*/
+	/*justify-content: space-around;*/
+}
+
+#coffeepot {
+	font-size: xx-large;
+}

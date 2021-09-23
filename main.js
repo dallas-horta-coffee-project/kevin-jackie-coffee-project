@@ -1,12 +1,11 @@
 "use strict"
 // Puts coffee data into table from JavaScript
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
+    var html = '<div class="coffee col-6">';
     // html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
-
+    html += '<h4 id="coffeepot">' + '<span class="p-2">' + coffee.name + "</span>" + '</h4>';
+    html += '<p>' + '<span class="p-2">' + coffee.roast + "</span>" + '</p>';
+    html += '</div>'
     return html;
 }
 // Converts table data into strings
