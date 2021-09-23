@@ -72,8 +72,6 @@ td {
 	border: none;
 }
 
-<<<<<<< HEAD
-=======
 #coffees {
 	/*display: flex;*/
 	/*flex-wrap: wrap;*/
@@ -83,4 +81,8 @@ td {
 #coffeepot {
 	font-size: xx-large;
 }
->>>>>>> 1ad3a978e8a4bacbb024a98993cb8bb762a2fa48
+
+#ordernow {
+	height: 602px;
+}
+
