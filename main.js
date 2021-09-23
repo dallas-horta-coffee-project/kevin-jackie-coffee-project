@@ -47,11 +47,19 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
-
+// var allRoast = document.querySelector('#all');
+// allRoast = renderCoffees(coffees);
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
+// Remove borders
 tbody.innerHTML = renderCoffees(coffees);
 
-submitButton.addEventListener('click', updateCoffees);
+// Default submit button action (line 60)
+// submitButton.addEventListener('click', updateCoffees);
+
+// Used preventDefault to stop the normal action of the submit button
+submitButton.addEventListener('click', function (e) {
+	e.preventDefault(updateCoffees);
+});
