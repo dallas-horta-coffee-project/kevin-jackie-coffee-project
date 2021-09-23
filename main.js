@@ -65,7 +65,7 @@ function liveSearchCoffees() {
 	// console.log(searchedCoffees);
 	tbody.innerHTML = renderCoffees(searchedCoffees);
 }
-
+//Live Search Function working
 var searchArea = document.querySelector('#search-area');
 searchArea.addEventListener('keyup', liveSearchCoffees);
 var submitButton = document.querySelector('#submit');
