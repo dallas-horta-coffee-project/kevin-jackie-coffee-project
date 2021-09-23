@@ -56,4 +56,10 @@ var roastSelection = document.querySelector('#roast-selection');
 // Remove borders
 tbody.innerHTML = renderCoffees(coffees);
 
-submitButton.addEventListener('click', updateCoffees);
+// Default submit button action (line 60)
+// submitButton.addEventListener('click', updateCoffees);
+
+// Used preventDefault to stop the normal action of the submit button
+submitButton.addEventListener('click', function (e) {
+	e.preventDefault(updateCoffees);
+});
