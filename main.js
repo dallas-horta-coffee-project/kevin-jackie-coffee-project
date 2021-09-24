@@ -36,7 +36,8 @@ function updateCoffees(e) {
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
-// Coffe Table Content //
+
+// Coffee Table Content //
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -54,7 +55,23 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
+//Takes in input from the Page, Stores it into the existing Coffee List
 
+var inputArea = document.querySelector("#input-area")
+var roastType = document.querySelector("#roast-type")
+var AddCoffeeButton = document.querySelector("#add-coffee")
+AddCoffeeButton.addEventListener('click', addYourOwnCoffees)
+
+
+function addYourOwnCoffees (input) {
+    var ownID = coffees.length+1;
+    var ownName = inputArea.value.toString();
+    var ownRoast = roastType.value.toString();
+    input = {id: ownID, name: ownName, roast: ownRoast};
+    coffees.push(input);
+    console.log(coffees);
+    NewCoffeeList.innerHTML = renderCoffees(coffees)
+}
 //Live Search Function
 function liveSearchCoffees() {
 	// making sure all inputs are lowercase
@@ -97,11 +114,6 @@ var roastSelection = document.querySelector('#roast-selection');
 roastSelection.addEventListener("change", updateRoastSelection);
 
 
-
-
-
-
-
 // exports data to the table in html
 var tbody = document.querySelector('#coffees');
 tbody.innerHTML = renderCoffees(coffees);
@@ -116,3 +128,7 @@ submitButton.addEventListener('click', function (e) {
 
 // var coffeeNameStyle = document.getElementsByClassName('coffee-name');
 // coffeeNameStyle.style.fontWeight = 'bold';
+
+//Adds New Coffee List to the Existing List Already
+var NewCoffeeList = document.querySelector('#coffees');
+NewCoffeeList.innerHTML = renderCoffees(coffees);
