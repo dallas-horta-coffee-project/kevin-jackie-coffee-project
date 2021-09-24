@@ -60,18 +60,41 @@ var coffees = [
 var inputArea = document.querySelector("#input-area")
 var roastType = document.querySelector("#roast-type")
 var AddCoffeeButton = document.querySelector("#add-coffee")
-AddCoffeeButton.addEventListener('click', addYourOwnCoffees)
 
 
+
+// function addYourOwnCoffees(e) {
+// 	e.preventDefault();
+// 	var ownName = inputArea.value.toString();
+// 	var ownRoast = roastType.value.toString();
+// 	// var addedCoffees = [];
+// 	var newCoffees = {
+// 		name: ownName,
+// 		roast: ownRoast
+// 	}
+// 	// addedCoffees.push(newCoffees);
+// 	coffees.push(newCoffees);
+// 	tbody.innerHTML = renderCoffees(coffees);
+// }
+AddCoffeeButton.addEventListener('click', addYourOwnCoffees);
 function addYourOwnCoffees (input) {
     var ownID = coffees.length+1;
     var ownName = inputArea.value.toString();
     var ownRoast = roastType.value.toString();
+	var newCoffees = [];
     input = {id: ownID, name: ownName, roast: ownRoast};
-    coffees.push(input);
-    console.log(coffees);
-    NewCoffeeList.innerHTML = renderCoffees(coffees)
+    newCoffees.push(input);
+	localStorage.setItem('newCoffee', JSON.stringify(newCoffees));
+	var addNewCoffee = function () {
+		var addedCoffees = {}
+		addedCoffees.push(JSON.parse(localStorage.getItem('newCoffee')));
+	}
+	coffees.push(addedCoffees);
+    // console.log(coffees);
+    tbody.innerHTML = renderCoffees(coffees)
 }
+
+
 //Live Search Function
 function liveSearchCoffees() {
 	// making sure all inputs are lowercase
@@ -130,5 +153,5 @@ submitButton.addEventListener('click', function (e) {
 // coffeeNameStyle.style.fontWeight = 'bold';
 
 //Adds New Coffee List to the Existing List Already
-var NewCoffeeList = document.querySelector('#coffees');
+var NewCoffeeList = document.querySelector('#add-coffee');
 NewCoffeeList.innerHTML = renderCoffees(coffees);
