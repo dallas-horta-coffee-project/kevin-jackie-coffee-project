@@ -17,22 +17,23 @@
 	<!--Bootstrap Icons-->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 	
+	<!--Font Awesome Icons-->
+	<script src="https://kit.fontawesome.com/1ff901315e.js" crossorigin="anonymous"></script>
+	
 	<!--Custom Stylesheet-->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!--	Navbar/Logo-->
 	<nav class="navbar navbar-light navbar-expand-lg p-0 sticky-top">
-		<div class="navbar-brand">
-			<img width="125" height="125" src="img/logo2.png" alt="logo">
-		</div>
+	
 <!--		Hamburger button for collapse menu-->
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 <!--		Start of navbar items-->
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav">
+			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
 					<a href="#" class="nav-link">Menu</a>
 				</li>
@@ -43,7 +44,10 @@
 					<a href="#" class="nav-link">Gift Cards</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav ml-auto">
+			<div class="navbar-brand">
+				<img width="125" height="125" src="img/logo2.png" alt="logo">
+			</div>
+			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
 					<a href="#ordernow" class="nav-link">Order Now</a>
 				</li>
@@ -61,10 +65,15 @@
 		<video autoplay muted loop id="coffee-vid" src="FoodPack1_17_Videvo.mov"></video>
 <!--		<h1>Dalorta Coffee Shop</h1>-->
 <!--    </div>-->
-	<div class="icons">
-	
+	<div class="logo-title d-flex justify-content-center align-items-center">
+<!--		<div class="logo">-->
+<!--			<img src="img/logo2.png" alt="logo">-->
+<!--		</div>-->
+		<div class="title">
+			<h1 class="title-head">Dalortabucks</h1>
+		</div>
 	</div>
-<div  class="container-fluid search-section">
+	<div  class="container-fluid search-section">
     <div class="row">
         <div class="column col-6 pt-3">
             <div class="d-flex flex-wrap coffeepot" id="coffees"></div>
@@ -104,6 +113,9 @@
         </div>
     </div>
 </div>
+
+
+	
 	<!--BootStrap/JQuery Scripts-->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

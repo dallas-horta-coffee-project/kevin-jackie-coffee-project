@@ -10,7 +10,7 @@ function renderCoffee(coffee) {
     var html = '<div class="coffee col-6">';
     // html += '<td>' + coffee.id + '</td>';
     html += '<h4 id="coffeepot">' + '<span class="p-2">' + coffee.name + "</span>" + '</h4>';
-    html += '<p>' + '<span class="p-2">' + coffee.roast + "</span>" + '</p>';
+    html += '<p id="coffeepot2">' + '<span class="p-2">' + coffee.roast + "</span>" + '</p>';
     html += '</div>'
     return html;
 }
@@ -63,36 +63,36 @@ var AddCoffeeButton = document.querySelector("#add-coffee")
 
 
 
-// function addYourOwnCoffees(e) {
-// 	e.preventDefault();
-// 	var ownName = inputArea.value.toString();
-// 	var ownRoast = roastType.value.toString();
-// 	// var addedCoffees = [];
-// 	var newCoffees = {
-// 		name: ownName,
-// 		roast: ownRoast
-// 	}
-// 	// addedCoffees.push(newCoffees);
-// 	coffees.push(newCoffees);
-// 	tbody.innerHTML = renderCoffees(coffees);
-// }
-AddCoffeeButton.addEventListener('click', addYourOwnCoffees);
-function addYourOwnCoffees (input) {
-    var ownID = coffees.length+1;
-    var ownName = inputArea.value.toString();
-    var ownRoast = roastType.value.toString();
-	var newCoffees = [];
-    input = {id: ownID, name: ownName, roast: ownRoast};
-    newCoffees.push(input);
-	localStorage.setItem('newCoffee', JSON.stringify(newCoffees));
-	var addNewCoffee = function () {
-		var addedCoffees = {}
-		addedCoffees.push(JSON.parse(localStorage.getItem('newCoffee')));
+function addYourOwnCoffees(e) {
+	e.preventDefault();
+	var ownName = inputArea.value.toString();
+	var ownRoast = roastType.value.toString();
+	// var addedCoffees = [];
+	var newCoffees = {
+		name: ownName,
+		roast: ownRoast
 	}
-	coffees.push(addedCoffees);
-    // console.log(coffees);
-    tbody.innerHTML = renderCoffees(coffees)
+	// addedCoffees.push(newCoffees);
+	coffees.push(newCoffees);
+	tbody.innerHTML = renderCoffees(coffees);
 }
+AddCoffeeButton.addEventListener('click', addYourOwnCoffees);
+// function addYourOwnCoffees (input) {
+//     var ownID = coffees.length+1;
+//     var ownName = inputArea.value.toString();
+//     var ownRoast = roastType.value.toString();
+// 	var newCoffees = [];
+//     input = {id: ownID, name: ownName, roast: ownRoast};
+//     newCoffees.push(input);
+// 	localStorage.setItem('newCoffee', JSON.stringify(newCoffees));
+// 	var addNewCoffee = function () {
+// 		var addedCoffees = {}
+// 		addedCoffees.push(JSON.parse(localStorage.getItem('newCoffee')));
+// 	}
+// 	coffees.push(addedCoffees);
+//     // console.log(coffees);
+//     tbody.innerHTML = renderCoffees(coffees)
+// }
 
 
 //Live Search Function
